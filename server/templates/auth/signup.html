@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div>
+    <form action="" method="post">
+        {{form.hidden_tag()}}
+
+        <div>
+            <label for="">{{form.name.label}}</label>
+            {{form.name}}
+            {% for err in form.name.errors if form.name.errors %}
+            <small>{{err}}</small>
+            {% endfor %}
+        </div>
+
+        <div>
+            <label for="">{{form.email.label}}</label>
+            {{form.email}}
+            {% for err in form.email.errors if form.email.errors %}
+            <small>{{err}}</small>
+            {% endfor %}
+        </div>
+
+        <div>
+            <label for="">{{form.password.label}}</label>
+            {{form.password}}
+            {% for err in form.password.errors if form.password.errors %}
+            <small>{{err}}</small>
+            {% endfor %}
+        </div>
+        {{form.submit}}
+    </form>
+</div>
+
+{% endblock %}

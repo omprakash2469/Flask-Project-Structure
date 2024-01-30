@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div>
+    <form action="" method="post">
+        {{form.hidden_tag()}}
+        {% for msg in get_flashed_messages() %}
+        <small>{{msg}}</small>
+        {% endfor %}
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">{{form.email.label}}</label>
+            {{form.email}}
+            {% for err in form.password.errors if form.password.errors %}
+            <small>{{err}}</small>
+            {% endfor %}
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">{{form.password.label}}</label>
+            {{form.password}}
+            {% for err in form.password.errors if form.password.errors %}
+            <small>{{err}}</small>
+            {% endfor %}
+        </div>
+        {{form.login}}
+    </form>
+</div>
+
+{% endblock %}

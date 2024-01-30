@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div>
+    <h1>Welcome to our Home page {{current_user.is_authenticated}} {{current_user.email}}</h1>
+</div>
+
+{% endblock %}
